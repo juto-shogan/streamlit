@@ -2,7 +2,10 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-st.title('Uber pickups in NYC')
+cols1 = st.columns(1)
+with cols1:
+    st.image("/home/juto/Desktop/ML_libraries/streamlit/logo.jpeg",  width=100)
+    st.title('Uber pickups in NYC')
 
 DATE_COLUMN = 'date/time'
 DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
@@ -36,3 +39,16 @@ st.subheader('Map of all pickups at %s:00' % hour_to_filter)
 st.map(filtered_data)
 head = data.head(5)
 st.write(head)
+
+
+# Create a list of options for the dropdown
+options = ['Option 1', 'Option 2', 'Option 3']
+
+# Create the dropdown
+selected_option = st.selectbox('Select an option:', options)
+
+# Create the button
+if st.button('Get Data'):
+    # Display the selected option when the button is clicked
+    st.write(f'You selected: {selected_option}')
+    
