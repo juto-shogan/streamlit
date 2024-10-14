@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 
 cols1 = st.columns(1)
+
 with cols1:
     st.image("/home/juto/Desktop/ML_libraries/streamlit/logo.jpeg",  width=100)
     st.title('Uber pickups in NYC')
